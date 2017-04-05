@@ -1,9 +1,7 @@
-#SET УДАЛЯЕТ ПОВТОРЫ
 #НАПИСАТЬ ШИФРАТОР И РАБОТУ С НИМ
 #НАПИСАТЬ ВСЕ ЧЕРЕЗ ФУНКЦИИ
 #ИСПРАВИТЬ БАГ КУРСОРА
 import os
-
 def pretty_lines(text, sym_in_line):
                     Line_len = len(text)//sym_in_line+2
                     Text_Massive = list(text)
@@ -69,7 +67,6 @@ while work:
                 print('tadam, you\'re wrong')
                 pointer = input('Please enter the NUMBER of symbol from where to write/delete: ')
             pointer = int(pointer)
-    
             pointer_print(pointer, text, 60) #отображение указателя
 #/редактирование/ выбор записи или удаления символов
             write_or_del = input('Choose write or delete? ')
@@ -78,12 +75,7 @@ while work:
             editing = list(text)
 #/редактирование/запись
             if write_or_del in ['w', 'write']:
-                a = input('Enter text: ') #ввод текста
-                #b=a.strip('!#@$%^&*()_+-=/\|')
-                #while a !=b:
-                #    print('invalid symbols inserted')
-                #    a = input('change string: ')
-                #    b=a.strip('!#@$%^&*()_+-=/\|')
+                a = input('Enter text: ') 
                 editing.insert(pointer, a) #ввод текста в промежуточную память
 #/редактирование/удаление
             else:
@@ -93,6 +85,7 @@ while work:
                     sym_to_del = input('Enter number of symbols to delete: ')
                 sym_to_del = int(sym_to_del)
                 del editing[text_len+pointer:text_len+pointer+sym_to_del]
+#/редактирование/создание финального образа
             final = ''.join(editing)
             continiue_editing = input('Continiue editing? ')
             while continiue_editing.lower() not in ['no', 'n', 'yes', 'y']:
